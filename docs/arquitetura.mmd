@@ -1,0 +1,7 @@
+flowchart TB
+    B["Botão em ponto comunitário"] -->|D2 e GND| A["Arduino Uno"]
+    A -->|D13 interno| L["LED visível ao cidadão"]
+    A <-->|USB serial a 9600 bps| G["Computador com gateway Python"]
+    G <-->|Wi-Fi ou Ethernet| R["Roteador ou ponto de acesso"]
+    R <-->|TCP/IP e HTTP(S)| J["API Find Me em Spring Boot"]
+    J --> H[("H2 da API Java")]

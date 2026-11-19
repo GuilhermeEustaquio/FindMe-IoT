@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "author": "Equipe Find Me",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-pushbutton", "id": "consulta", "top": 11, "left": 348,
+      "attrs": { "color": "green", "label": "Consultar alertas", "key": "C" } }
+  ],
+  "connections": [
+    [ "consulta:1.l", "uno:2", "green", [ "h-20", "v-39" ] ],
+    [ "consulta:2.l", "uno:GND.1", "black", [ "h-39", "v-44" ] ]
+  ],
+  "serialMonitor": { "display": "always", "newline": "lf" },
+  "dependencies": {}
+}

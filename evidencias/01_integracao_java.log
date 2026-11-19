@@ -1,0 +1,57 @@
+API Java commit 8e0b95963086524d539e476ae9d643f08ccc5e08
+Arduino Uno emulado (ATmega328P, 16 MHz), Spring Boot 4.1.2 e H2 de teste
+
+I01 | Estabilizacao e debounce
+> tempo 1200  LED=0 MUDANCAS=4 UART=
+> baixo 15  LED=0 MUDANCAS=0 UART=
+> alto 70  LED=0 MUDANCAS=0 UART=
+API criou caso ficticio 1 em EM_ANALISE.
+
+I02 | Sem alertas ativos
+> baixo 85  LED=1 MUDANCAS=1 UART=CONSULTAR,
+> baixo 300  LED=0 MUDANCAS=1 UART=
+> alto 80  LED=0 MUDANCAS=0 UART=
+LIVRE | alertas ativos=0
+> serial 25 LIVRE  LED=0 MUDANCAS=0 UART=
+
+I03 | Publicacao e atualizacao do LED
+API validou e publicou o alerta.
+> baixo 85  LED=1 MUDANCAS=1 UART=CONSULTAR,
+> baixo 300  LED=0 MUDANCAS=1 UART=
+> alto 80  LED=0 MUDANCAS=0 UART=
+ATIVO | alertas ativos=1
+> serial 25 ATIVO  LED=1 MUDANCAS=1 UART=
+> tempo 500  LED=1 MUDANCAS=0 UART=
+
+I04 | Localizacao e retirada do alerta
+API marcou o caso como LOCALIZADO.
+> baixo 85  LED=1 MUDANCAS=0 UART=CONSULTAR,
+> baixo 300  LED=0 MUDANCAS=1 UART=
+> alto 80  LED=0 MUDANCAS=0 UART=
+LIVRE | alertas ativos=0
+> serial 25 LIVRE  LED=0 MUDANCAS=0 UART=
+> tempo 500  LED=0 MUDANCAS=0 UART=
+
+I05 | Falha HTTP ou de conexao
+> baixo 85  LED=1 MUDANCAS=1 UART=CONSULTAR,
+> baixo 300  LED=0 MUDANCAS=1 UART=
+> alto 80  LED=0 MUDANCAS=0 UART=
+FALHA | URLError
+> serial 25 FALHA  LED=1 MUDANCAS=1 UART=
+> tempo 750  LED=1 MUDANCAS=6 UART=
+
+I06 | Sem resposta serial
+> baixo 85  LED=1 MUDANCAS=0 UART=CONSULTAR,
+> baixo 300  LED=0 MUDANCAS=1 UART=
+> alto 80  LED=0 MUDANCAS=0 UART=
+> tempo 10500  LED=0 MUDANCAS=26 UART=
+
+I07 | Recuperacao e validade da leitura
+> baixo 85  LED=1 MUDANCAS=1 UART=CONSULTAR,
+> baixo 300  LED=0 MUDANCAS=1 UART=
+> alto 80  LED=0 MUDANCAS=0 UART=
+LIVRE | alertas ativos=0
+> serial 25 LIVRE  LED=0 MUDANCAS=0 UART=
+> tempo 31000  LED=1 MUDANCAS=3 UART=
+
+Resultado: 7 de 7 cenarios aprovados.
